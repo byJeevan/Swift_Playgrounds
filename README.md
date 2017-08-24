@@ -1,4 +1,4 @@
-# Swift_Playgrounds
+# Swift Playgrounds
 
 **SWIFT 3.1** playground collection containing Swift version for fundamental challenges includes :
 

@@ -4,37 +4,34 @@
 
 import Foundation
 
-var array =  [5, 3, 4, 6, 8, 2, 9, 1, 7, 10, 11]
+//Unsorted Array input
+let bsArray = [5, 8, 1, 9, 10, 2, 6];
+let bsArrayCount = bsArray.count;
 
-var sortedArray = NSMutableArray(array: array)
+var minIndex = 0;
 
-var sortedAboveIndex = array.count // Assume all values are not in order
-
-var count = 0;
-
-repeat {
+//Outer loop
+for i in 0..<(bsArrayCount-1) {
     
-    var lastSwapIndex = 0
- 
-    for index in 1..<sortedAboveIndex {
+    minIndex = i;
+    
+    //Inner loop
+    for j in (i+1)..<bsArrayCount {
         
-        if ((sortedArray[index - 1] as? Int)! > (sortedArray[index] as? Int)!) { //Ascending order, Hence '>'
-            sortedArray.exchangeObject(at: index, withObjectAt: index-1)
-            lastSwapIndex = index
+        //compare if min
+        if (bsArray[j] < bsArray[minIndex]) {
             
-            count = count + 1;
+            minIndex = j;
         }
+        
         
     }
     
-    //print("Last swapped \(lastSwapIndex)")
+    //Once we have min index, swap
+    var temp = bsArray[i]
+    bsArray[i] = bsArray[minIndex]
+    bsArray[minIndex] = temp;
     
-    sortedAboveIndex = lastSwapIndex
-    print(count)
-    
-    
-} while (sortedAboveIndex != 0)
+}
 
-
-//Print sorted array.
-print(sortedArray as Array)
+print("Sorted Array :", bsArray)
