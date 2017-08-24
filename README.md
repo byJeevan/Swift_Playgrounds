@@ -1,5 +1,6 @@
 # Swift_Playgrounds
-Swift playground collection containing Swift version for fundamental challenges includes :
+
+**SWIFT 3.1** playground collection containing Swift version for fundamental challenges includes :
 
 * Algorithms
 	- Sorting
@@ -11,12 +12,19 @@ Swift playground collection containing Swift version for fundamental challenges 
 	- Classes & Structures
 	- Numbers
 
+* Challenges
+    - Arrays
+    - Matrix
+    - Numbers
+    - Patterns
+    - Series
+    - String
+
 * Data Structures
 	- Stack
 	- Queue
 	- Linked List
-	- D. Linked List
-	- Graphs & Trees
+	- Doubly Linked List (Graphs & Trees)
 
 * Design Patterns
 	- Creational
@@ -24,13 +32,9 @@ Swift playground collection containing Swift version for fundamental challenges 
 	- Behavioural
 
 * Hacker Earth 30 Days Challenges in Swift
-	- Day 1…30
-
-* Misc
-	- Patterns
-	- Series
+	- Day 1 … 30
 
 
-also Swift solutions various question posted in *[Hackerrank](https://www.hackerrank.com)/[Techgig](https://www.techgig.com/)/[GeekforGeek](http://www.geeksforgeeks.org/)*
+Also Swift solutions various question posted in *[Hackerrank](https://www.hackerrank.com)/[Techgig](https://www.techgig.com/)/[GeekforGeek](http://www.geeksforgeeks.org/)*
 
-Feel free to contribute and post feedbacks.
+Feel free to contribute & post feedbacks.
