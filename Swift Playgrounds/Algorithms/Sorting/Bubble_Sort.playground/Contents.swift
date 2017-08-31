@@ -5,7 +5,7 @@
 import Foundation
 
 //Unsorted Array input
-let bsArray = [5, 8, 1, 9, 10, 2, 6];
+var bsArray = [5, 8, 1, 9, 10, 2, 6];
 let bsArrayCount = bsArray.count;
 
 var minIndex = 0;
