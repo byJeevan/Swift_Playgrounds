@@ -1,6 +1,6 @@
 # Swift Playgrounds
 
-**SWIFT 3.1** playground collection containing Swift version for fundamental challenges includes :
+**SWIFT 5.0** playground collection containing Swift version for fundamental challenges includes :
 
 * Algorithms
 	- Sorting
