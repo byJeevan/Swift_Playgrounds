@@ -25,8 +25,8 @@ let emoji = "\u{1F1F5} in 🌍"
 let frenchAccent = "e\u{301}"
 
 //Character count in the First string
-firstString.characters.count
-emoji.characters.count
+firstString.count
+emoji.count
 
 //Append string
 var greeting = "Welcome!"
@@ -45,7 +45,7 @@ let cafe2 = "Café"
 cafe1 == cafe2
 
 //Characters of string
-for ch in variableString.characters {
+for ch in variableString {
     print(ch)
 }
 
