@@ -10,6 +10,7 @@ protocol ThemeProtocol {
 class Theme : ThemeProtocol {
     var backgroundColor:UIColor?
     var textColor:UIColor?
+    var weight:Int?
     typealias buildThemeClosure = (Theme) -> Void
 
     init(build:buildThemeClosure) {
@@ -29,5 +30,5 @@ let lightTheme = Theme(build: {
 
 ///usage in some were in your code
 darkTheme.textColor
-lightTheme.backgroundColor
+lightTheme.backgroundColor = .red
 
