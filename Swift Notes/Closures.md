@@ -1,10 +1,12 @@
+## Closures
+
 ### Defination & Introduction
 - *Closures* are self-contained blocks of functionality that can be passed around and used in your code.
 - *Closure expressions* are a way to write inline closures in a brief, focused syntax
 - Closure expression syntax has the following general form:
   ```
-  { (parameters) -> return type in
-      statements
+  { (<parameters>) -> <return type> in
+      <statements>
   }
   ```
 - *parameters* can be : 
@@ -13,7 +15,6 @@
   - Tuples can be parameters or return type.
   
 - The start of the closure’s body is introduced by the `in` keyword.
-- 
 
 
 ### Closures take one of three forms
