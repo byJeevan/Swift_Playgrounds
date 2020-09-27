@@ -5,7 +5,7 @@
 * Algorithms
 	- Sorting
 	- Searching
-
+	
 * Basics
 	- String
 	- Arrays
@@ -13,18 +13,18 @@
 	- Numbers
 
 * Challenges
-    - Arrays
-    - Matrix
-    - Numbers
-    - Patterns
-    - Series
-    - String
+	- String
+	- Arrays
+	- Matrix
+	- Numbers
+	- Patterns
+	- Series
 
 * Data Structures
 	- Stack
 	- Queue
 	- Linked List
-	- Doubly Linked List (Graphs & Trees)
+	- Graphs & Trees
 
 * Design Patterns
 	- Creational
@@ -35,6 +35,6 @@
 	- Day 1 … 30
 
 
-Also Swift solutions various question posted in *[Hackerrank](https://www.hackerrank.com)/[Techgig](https://www.techgig.com/)/[GeekforGeek](http://www.geeksforgeeks.org/)*
+Also Swift solutions various question posted in *[Hackerrank](https://www.hackerrank.com)/[Techgig](https://www.techgig.com/)/[GeekforGeek](http://www.geeksforgeeks.org/), [LeetCode](https://leetcode.com/)*
 
 Feel free to contribute & post feedbacks.
