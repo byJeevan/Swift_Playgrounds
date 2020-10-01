@@ -27,7 +27,13 @@
 ### Closures are Reference Types
 
 ### Escaping & Non-Escaping Closures
+-  *A non-escaping closure will be executed within (/along with) the body of that function and nowhere else. When the function ends, the closure will no longer exist in memory.*
+- *An escaping closure grants the ability of the closure to outlive the function and can be stored elsewhere.*
+- **When to use escaping ?** When we are dealing with dispatch queue, the queue will hold onto the closure for you, and when the queue is done completing its work, then it will return back to the closure and complete it. Since dispatch queue is outside of the scope, we need to use escaping closure. Another instance is when we need to store our closure to a global variable, property, or any bit of storage that lives on past the function.
+- During the earlier days of Swift, closure parameters were escaping by default. Due to better memory management and optimizations, Swift has changed all closures to be non-escaping by default.
 
+### @autoclosure
+- *An autoclosure is a closure that is automatically created to wrap an expression that's being passed as an argument to a function*
 
 ### References:
 - [Medium #post1](https://medium.com/swift-india/functional-swift-closures-67459b812d0)
