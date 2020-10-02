@@ -71,6 +71,10 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 ### Const vs Let
 - Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
 
+### Lazy properties
+
+### Computed properties
+
 ## Optionals & Non-Optionals
 
 ### Unwrapping optionals
