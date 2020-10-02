@@ -1,3 +1,32 @@
+## Swift Language
+### About
+- Swift is a general-purpose, multi-paradigm, protocol oriented, object oriented, compiled programming language ; developed by Apple Inc. for iOS, iPadOS, macOS, watchOS and Linux.
+
+### Advantages of Swift over Objective-C
+- Swift is easier to read
+- Swift is easier to maintain
+- Swift is safer
+- Swift is unified with memory management
+- Swift requires less code
+- Swift is faster
+- Fewer name collisions with open source projects
+- Swift support dynamic libraries
+- Swift playgrounds encourages interactive coding
+
+### Swift's Pattern matching 6 techniques
+- *Tuple patterns* are used to match values of corresponding tuple types.
+- *Type-casting patterns* allow you to cast or match types.
+- *Wildcard patterns* match and ignore any kind and type of value.
+- *Optional patterns* are used to match optional values.
+- *Enumeration case patterns* match cases of existing enumeration types.
+- *Expression patterns* allow you to compare a given value against a given expression.
+
+### Control transfer statements in Swift
+- Continue
+- Break
+- Fallthrough
+- Return
+
 ### Data Types (Int, Float, Double)
 - On a 32-bit platform, Int is the same size as Int32.
 - On a 64-bit platform, Int is the same size as Int64.
@@ -11,34 +40,30 @@
 ### Reference Types
 - Classes and Closures are tipical examples.
 
-### Optionals
-- By default optionals values are set to ‘nil’ when defined. 
-  Eg : `var myVar:Int? //is nil.`
-
-### Keywords
-- `final` key will stop overriding method -or- subclassing class
-
 ### Variadic Parameters
 - Variadic parameters : The parameter accepts zero or more values of a specified type.
 - Built in Eg. `print(1, 2, 3, 4, 5)`
 - To sum up any number integer inputs : 
-```
-func sum1(_ numbers: Int...) -> Int {
-    var total = 0
-    
-    for number in numbers {   total += number }
-    
-    return total
-}
+    ```
+    func sum1(_ numbers: Int...) -> Int {
+        var total = 0
 
-//can be called
-let total = sum2(1, 2, 3, 4, 5)
-```
+        for number in numbers {   total += number }
+
+        return total
+    }
+
+    //can be called
+    let total = sum2(1, 2, 3, 4, 5)
+    ```
 
 ### MISC 
 - There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.
 - ARC - Automatic Reference Counting is a mechanism which manages a memory, which is applicable for reference type. An object is deallocated only when there are 0 references on it.
 - Retain cycle - it is a situation when each of who objects has a strong reference on each other
+- By default optionals values are set to ‘nil’ when defined. 
+  Eg : `var myVar:Int? //is nil.`
+- `final` key will stop overriding method -or- subclassing class
 
 ### Const vs Let
 - Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
