@@ -76,7 +76,7 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 ### Computed properties
 
 ## Optionals & Non-Optionals
-
+- By default optionals values are set to ‘nil’ when defined. Eg : var myVar:Int? //Will set to nil
 ### Unwrapping optionals
 1. Optional binding (if-let)
 2. guard statement (guard let)
