@@ -23,6 +23,36 @@
 #### 3. Closure expressions are unnamed closures written in a lightweight syntax that can capture values from their surrounding context.
 
 ### Trailing Closures
+- If the last parameter to a function is a closure, Swift lets you use special syntax called trailing closure syntax. Rather than pass in your closure as a parameter, you pass it directly after the function inside braces.
+
+- For example
+    ```
+    //A closure at the end of `travel` function. 
+    func travel(action: () -> Void) {
+        print("Do some travel action")
+        action()
+        print("I arrived")
+    }
+    
+    //We can execute it in casual way
+    travel() {
+        print("I'm driving in my car")
+    }
+    
+    //Because there aren’t any other parameters to `travel` function, we can eliminate parentheses '()' 
+    travel {
+      print("I'm driving in my car")
+    }
+    ```
+- We can have mulitple trailing closures in *Swift 5.3*
+    ```
+    // Eg. Multiple trailing closure arguments
+    UIView.animate(withDuration: 0.3) {
+      self.view.alpha = 0
+    } completion: { _ in
+      self.view.removeFromSuperview()
+    }
+    ```
 
 ### Closures are Reference Types
 
