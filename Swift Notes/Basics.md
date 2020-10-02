@@ -5,7 +5,7 @@
 ### Advantages of Swift over Objective-C
 - Swift is easier to read
 - Swift is easier to maintain
-- Swift is safer
+- Swift is safer (Type-Safe) Helps you to clear about types. Eg:  If code expects a `String`, type safely avoids mistakenly passing an `Int`. Similarly prevents passing `optional` to `non-optional` check at compile time.
 - Swift is unified with memory management
 - Swift requires less code
 - Swift is faster
@@ -33,13 +33,6 @@
 - Float : 32 bit floating point number. 
 - Double : Is Float64 in swift. Default and Recommended because , iOS 11 is 64 bit platform. Also swift has Float80 ! 
 
-### Value Types
-- enums, structures, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
-- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.
-
-### Reference Types
-- Classes and Closures are tipical examples.
-
 ### Variadic Parameters
 - Variadic parameters : The parameter accepts zero or more values of a specified type.
 - Built in Eg. `print(1, 2, 3, 4, 5)`
@@ -57,6 +50,84 @@
     let total = sum2(1, 2, 3, 4, 5)
     ```
 
+### Value Types
+- enums, structures, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
+- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.
+
+### Reference Types
+- Classes and Closures are tipical examples.
+
+### Unowned vs Weak
+- A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
+Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
+- For `weak` references, which are set to nil if the instance they reference is deallocated.
+- Weak references are automatically set to nil once the object they point to gets deallocated
+- Since a weak reference can be set to nil, it is always declared as an optional.
+- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will 
+- unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
+- unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
+
+
+### Const vs Let
+- Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
+
+## Optionals & Non-Optionals
+
+### Unwrapping optionals
+1. Optional binding (if-let)
+2. guard statement (guard let)
+3. force unwrapping (!)
+4. Optional chaining
+
+### 1. Optional binding
+- Use optional binding to find out whether an optional contains a value and if so, to make that value available as a temporary constant or variable.
+    ``` 
+    if let constantName = someOptional {
+        //constantName is now non-optional
+    }
+    ```
+    
+### 2. `guard` statement
+- It reduces nested ‘if-else’ statements. You can think of guard more like an Assert, but rather than crashing, you can gracefully exit.
+- Swift 2 introduced.
+    ```
+    guard <Some condition> else {
+      //Code to handle if above condition fails.
+    }
+    ```
+    
+### 3. Force unwrapping
+- If we are sure that a value of optional isn’t nil, swift allows to force unwrap.
+- Tipically not safe practice & hence not recomonded.
+```
+//example:
+let str = "5"
+let num = Int(str) //optional(5)
+let forcedNum = Int(str)! //force unwrapped to '5'
+```
+
+### 4. Optional chaining
+- Process of calling/querying properties, methods where multiple calls/queries chained together. If any link in the chain fails, then the entire chain fails by returning nil.
+- Opposite of 'Forced unwrapping' ‘?’ placed after optional value to call its property or method.
+    ```
+    class ElectionPoll {
+        var candidate: Pollbooth?
+    }
+    class Pollbooth {
+        var name = "MP"
+    }
+
+    let cand = ElectionPoll()
+
+    if let candname = cand.candidate?.name { //--- Optional chaining
+        print("Candidate name is \(candname)")
+    }else {
+        print("Candidate name cannot be retreived")
+    }
+
+    ```
+
+
 ### MISC 
 - There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.
 - ARC - Automatic Reference Counting is a mechanism which manages a memory, which is applicable for reference type. An object is deallocated only when there are 0 references on it.
@@ -65,13 +136,3 @@
   Eg : `var myVar:Int? //is nil.`
 - `final` key will stop overriding method -or- subclassing class
 
-### Const vs Let
-- Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
-
-### Unowned vs Weak
-- For `weak` references, which are set to nil if the instance they reference is deallocated.
-- Weak references are automatically set to nil once the object they point to gets deallocated
-- Since a weak reference can be set to nil, it is always declared as an optional.
-- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will 
-- unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
-- unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
