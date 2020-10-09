@@ -71,12 +71,23 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 ### Const vs Let
 - Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
 
-### Lazy properties
-
 ### Computed properties
+- Are functions *masquerading* as properties. 
+- Can change value dynamically and are thus calculated; this is in contrast to stored properties - which are fixed and have to update explicitly.
+- **Don't** use for expensive operations is highly discouraged. 
+- **DO** use when a value can be different each time you call it.
+
+### Lazy properties
+- For expensive and time consuming computations.
+- This will make sure properties are calculated at a later time (if at all) and only once - stored.
+
+### Property Observers
+- **didSet** after property changed & **willSet** just before property changes.
+- **defer** use to trigger property observer from an initializer.
 
 ## Optionals & Non-Optionals
 - By default optionals values are set to ‘nil’ when defined. Eg : var myVar:Int? //Will set to nil
+
 ### Unwrapping optionals
 1. Optional binding (if-let)
 2. guard statement (guard let)
