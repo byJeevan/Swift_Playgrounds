@@ -1,3 +1,27 @@
+## Structs
+- We cannot subclass
+- Suitable for small data models
+
+### Initialization 
+↳ Memberwise Initialization, Custom, Designated, Convenience, Required initializers, Optional Initializers, Failable initializers, Throwing Initializers
+
+#### Memberwise initializer
+- which is a free initializer the compiler generates for you.
+- Eg: Struct `Player` defined with Memberwise initializer
+
+```
+struct Player {
+  let name:String
+  let pawn:Int
+}
+
+//Memberwise initializer
+let player = Player(name:"Jeff", pawn:3)
+```
+## Classes
+
+### Initialization
+
 ## Closures
 
 ### Defination & Introduction
