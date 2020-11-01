@@ -5,7 +5,7 @@
 ### Initialization 
 ↳ Memberwise Initialization, Custom, Designated, Convenience, Required initializers, Optional Initializers, Failable initializers, Throwing Initializers
 
-#### Memberwise initializer
+#### Memberwise (free) initializer
 - which is a free initializer the compiler generates for you.
 - Eg: Struct `Player` defined with Memberwise initializer
 
@@ -15,9 +15,44 @@ struct Player {
   let pawn:Int
 }
 
-//Memberwise initializer
-let player = Player(name:"Jeff", pawn:3)
+let player = Player(name:"Jeff", pawn:3) //Memberwise initializer
 ```
+#### Custom initilizers
+
+```
+struct Player {
+  let name:String
+  let pawn:Int
+  
+  init(name:String) {
+    self.name = name
+    self.pawn = Int.random(in: 0..<10)
+  }
+}
+
+let player = Player(name:"Jeff") //Custom initializer
+```
+- When 'Custom initializer' added to Struct, it will rule out 'Memberwise initializer' 
+- **You can offer both initializers by extending struct and putting your custom initializer there in the extension.**
+
+```
+  //restore struct
+  struct Player {
+    let name:String
+    let pawn:Int
+
+    //Memberwise initializer will inserted. 
+  }
+
+  extension Player {
+  //Adding custom initializer in the extension
+    init(name:String) {
+      self.name = name
+      self.pawn = Int.random(in: 0..<10)
+    }
+  }
+```
+
 ## Classes
 
 ### Initialization
