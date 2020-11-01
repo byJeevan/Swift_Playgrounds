@@ -24,6 +24,7 @@
     * Functions with `final` keyword are also statically dispatched.
     * Functions with `dynamic` are invoked via message passing. Piror to Swift 4, a function with dynamic modifier is implicitly visible to Objective-C. Meanwhile Swift 4 requires you to explicitly declare it with `@objc` attribute.
 - Ordinary extensions (without `final`, `dynamic`, `@objc`) are directly dispatched. 
+- **Final Keyword is memory efficient :** Final key ensures that the class or method cannot be overridden. Thus it will switch Dynamic dispatch (slowest) to Static dispatch (Faster).
 
 
 ### Principles
