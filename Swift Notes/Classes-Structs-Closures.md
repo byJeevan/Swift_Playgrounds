@@ -55,7 +55,9 @@ let player = Player(name:"Jeff") //Custom initializer
 
 ## Classes
 
-### Initialization
+### Subclassing
+- Is a way to achieve polymorphism
+
 
 ## Closures
 
