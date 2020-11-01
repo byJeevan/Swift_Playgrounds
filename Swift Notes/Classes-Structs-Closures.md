@@ -126,6 +126,13 @@ let player = Player(name:"Jeff") //Custom initializer
 ### @autoclosure
 - *An autoclosure is a closure that is automatically created to wrap an expression that's being passed as an argument to a function*
 
+#### Struct inheritance/polymorphism wouldn't be possible for at least 2 reasons.
+- Structs are stored and moved around by value. This requires the compiler to know, at compile time, the exact size of the struct, in order to know how many bytes to copy after the start of a struct instance.
+- Suppose there was a struct A, and a struct B that inherits from A. Whenever the compiler sees a variable of type A, it has no way to be sure if the runtime type will really be an A, or if B was used instead. If B added on new stored properties that A didn't have, then B's size would be different (bigger) than A. The compiler would be unable to determine the runtime type, and the size of these structs.
+- Polymorphism would require a function table. A function table would be stored as a static member of the struct type. But to access this static member, every struct instance would need an instance member which encodes the type of the instance. This is usually called the "isa" pointer (as in, this instance is a A type). This would be 8 bytes of overhead (on 64 bit systems) for every instance. Considering Int, Bool, Double, and many other common types are all implemented as structs, this would be an unacceptable amount of overhead. Just think, a Bool is a one byte value, which would need 8 bytes of overhead. That's 11% efficiency!
+- That’s why swift provides Protocols to solve all the above problems.
+
+
 ### References:
 - [Medium #post1](https://medium.com/swift-india/functional-swift-closures-67459b812d0)
 - [programiz.com](https://www.programiz.com/swift-programming/closures)
