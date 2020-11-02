@@ -7,6 +7,10 @@
 
 #### 1. Memberwise (free) initializer
 - which is a free initializer the compiler generates for you.
+- Swift structures (and only structures) automatically generate a memberwise initializer.
+- You can use default initializers when your types either don’t have any stored properties.
+- Re-ordering structure properties, will break instance initialization.
+
 - Eg: Struct `Player` defined with Memberwise initializer
 
 ```
@@ -32,7 +36,7 @@ struct Player {
 
 let player = Player(name:"Jeff") //Custom initializer
 ```
-- When 'Custom initializer' added to Struct, it will rule out 'Memberwise initializer' 
+- As soon as you define an 'custom initializer', you lose the automatic 'memberwise initializer'.
 - **You can offer both initializers by extending struct and putting your custom initializer there in the extension.**
 
 ```
