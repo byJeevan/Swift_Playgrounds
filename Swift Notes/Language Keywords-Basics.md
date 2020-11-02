@@ -1,6 +1,9 @@
 ## Swift Language
 ### About
 - Swift is a general-purpose, multi-paradigm, protocol oriented, object oriented, compiled programming language ; developed by Apple Inc. for iOS, iPadOS, macOS, watchOS and Linux.
+- *An example that shows swift is safe language: * Swift is a type-safe language, and doesn’t allow (for example) a variable of type `String` and a variable of type `Double` to swap values with each other. Attempting to do so results in a compile-time error.
+- In Swift the classes are not inherited from the base class and the classes that you define without specifying its superclass, automatically becomes the base-class. Note: In case objective : Root class either NSObject or NSCoder or NSProxy class
+- There are many different ways to pass data such as Delegate, KVO, Segue, and NSNotification, Target-Action, Callbacks.
 
 ### Advantages of Swift over Objective-C
 - Swift is easier to read
@@ -146,11 +149,13 @@ let forcedNum = Int(str)! //force unwrapped to '5'
 ### Mutability of Collections :
 - If you create a collection type(Array, Set or Dictionary) and assign it to a variable type (var), that collection type will be mutable. This means that you can change (or mutate) the collection after it’s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant (let), that collection is immutable, and its size and contents cannot be changed.
 
+### `AnyObject`
+- Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
+- 
 
 ### MISC 
 - There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.
 - ARC - Automatic Reference Counting is a mechanism which manages a memory, which is applicable for reference type. An object is deallocated only when there are 0 references on it.
-- Retain cycle - it is a situation when each of who objects has a strong reference on each other
 - By default optionals values are set to ‘nil’ when defined. 
   Eg : `var myVar:Int? //is nil.`
 - `final` key will stop overriding method -or- subclassing class
