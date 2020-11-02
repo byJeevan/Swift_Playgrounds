@@ -2,10 +2,10 @@
 - We cannot subclass
 - Suitable for small data models
 
-### Initialization 
+### Struct Initialization 
 ↳ Memberwise Initialization, Custom, Designated, Convenience, Required initializers, Optional Initializers, Failable initializers, Throwing Initializers
 
-#### Memberwise (free) initializer
+#### 1. Memberwise (free) initializer
 - which is a free initializer the compiler generates for you.
 - Eg: Struct `Player` defined with Memberwise initializer
 
@@ -17,7 +17,7 @@ struct Player {
 
 let player = Player(name:"Jeff", pawn:3) //Memberwise initializer
 ```
-#### Custom initilizers
+#### 2. Custom initilizers
 
 ```
 struct Player {
@@ -54,6 +54,14 @@ let player = Player(name:"Jeff") //Custom initializer
 ```
 
 ## Classes
+
+### Class initialization
+
+#### 1. Designated initializer
+- A designated initializer must call a designated initializer from its immediate superclass
+
+#### 2. Convenience initializer
+- A convenience initializer must ultimately call a designated initializer
 
 ### Subclassing
 - Is a way to achieve polymorphism
