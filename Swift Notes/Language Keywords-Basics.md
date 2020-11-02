@@ -24,6 +24,10 @@
 - *Enumeration case patterns* match cases of existing enumeration types.
 - *Expression patterns* allow you to compare a given value against a given expression.
 
+## Access Controllers
+- Swift provides 5 access controllers based on Modules & Source Files **Open Access, Public, Internal, File-Private, Private**
+
+
 ### Control transfer statements in Swift
 - Continue
 - Break
@@ -81,8 +85,13 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 - **DO** use when a value can be different each time you call it.
 
 ### Lazy properties
-- For expensive and time consuming computations.
-- This will make sure properties are calculated at a later time (if at all) and only once - stored.
+- A lazy stored property is a property whose initial value is not calculated until the first time it is used. You indicate a lazy stored property by writing the lazy modifier before its declaration.
+- Note : You must always declare a lazy property as a variable (with the var keyword), because its initial value might not be retrieved until after instance initialization completes. Constant properties must always have a value before initialization completes, and therefore cannot be declared as lazy.
+- Pros : 
+1. When a initial value property is dependent on some other factors.
+2. When initialization of property expensive in terms of time and memory.
+3. This will make sure properties are calculated at a later time (if at all) and only once - stored.
+
 
 ### Property Observers
 - **didSet** after property changed & **willSet** just before property changes.
