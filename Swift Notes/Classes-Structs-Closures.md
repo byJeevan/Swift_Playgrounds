@@ -1,3 +1,21 @@
+### Similarities between classes and structures
+- Properties: These are used to store information in our classes and structures
+- Methods: These provide functionality for our classes and structures
+- Initializers: These are used when initializing instances of our classes and structures
+- Subscripts: These provide access to values using the subscript syntax
+- Extensions: These help extend both classes and structures
+
+### Differences between classes and structures
+- Type: A structure is a value type, while a class is a reference type
+- Inheritance: A structure cannot inherit from other types, while a class can
+- KVC : structs will not support. Classes inherited from NSObject will support.
+
+### Value vs Reference types
+- Structures are value types. When we pass instances of a structure within our application,
+we pass a copy of the structure and not the original structure. Classes are reference types,
+therefore when we pass an instance of a class, within our application, a reference to the
+original instance is passed.
+
 ## Structs
 - We cannot subclass
 - Suitable for small data models
@@ -65,10 +83,13 @@ let player = Player(name:"Jeff") //Custom initializer
 - A designated initializer must call a designated initializer from its immediate superclass
 
 #### 2. Convenience initializer
-- A convenience initializer must ultimately call a designated initializer
+- A convenience initializer must ultimately call a designated initializer.
+- Convenience initializers can call other
+convenience initializers, but they ultimately call a designated initializer from the same class
 
 ### Subclassing
-- Is a way to achieve polymorphism
+- Is a way to achieve polymorphism.
+
 
 
 ## Closures
