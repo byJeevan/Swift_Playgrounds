@@ -7,19 +7,19 @@
 * Added Core NFC framework
  
 ### iOS 12 in Xcode 10 comes up with Swift 4.2
-* Notifications can now be grouped by the system (UNMutableNotificationContent)
-* Our own Siri Shortcuts can be added  (NSUserActivity)
+* Notifications can now be grouped by the system (`UNMutableNotificationContent`)
+* Our own Siri Shortcuts can be added  (`NSUserActivity`)
 * UIWebview Depricated
 
 ### iOS 13 in Xcode 11 
 * SwiftUI - a new way to design UI.
 * System wide Dark mode 
 * Multi window support (i.e. independent scenes in SceneDelegate)
-* New Core Haptics framework , CryptoKit
+* Added new Core Haptics framework, `CryptoKit`
 
 ### What’s new in Swift 5.3 
-* Multiple error cases inside a single catch block
+* Multiple error cases inside a single catch block.
 * Multiple trailing closures.
-* Comparable conformance for enums
-* self is no longer required in many places like Closures
-* A new Float16 type
+* Comparable conformance for enums.
+* `self` is no longer required in many places like Closures.
+* A new Float16 type.
