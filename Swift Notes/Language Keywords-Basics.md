@@ -63,13 +63,6 @@
     let total = sum2(1, 2, 3, 4, 5)
     ```
 
-### Value Types
-- enums, structures, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
-- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.
-
-### Reference Types
-- Classes and Closures are tipical examples.
-
 ### Unowned vs Weak
 - A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
 Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
@@ -80,9 +73,6 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 - unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
 - unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
 
-
-### Const vs Let
-- Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
 
 ### Computed properties
 - Are functions *masquerading* as properties. 
@@ -98,6 +88,7 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 2. When initialization of property expensive in terms of time and memory.
 3. This will make sure properties are calculated at a later time (if at all) and only once - stored.
 
+### Stored properties
 
 ### Property Observers
 - **didSet** after property changed & **willSet** just before property changes.
@@ -164,9 +155,20 @@ let forcedNum = Int(str)! //force unwrapped to '5'
 ### Mutability of Collections :
 - If you create a collection type(Array, Set or Dictionary) and assign it to a variable type (var), that collection type will be mutable. This means that you can change (or mutate) the collection after it’s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant (let), that collection is immutable, and its size and contents cannot be changed.
 
+### Const vs Let
+- Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
+
+### Value Types
+- enums, structures, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
+- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.
+
+### Reference Types
+- Classes and Closures are tipical examples.
+
+
 ### `AnyObject`
 - Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
-- 
+
 
 ### MISC 
 - There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.
