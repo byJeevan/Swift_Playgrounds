@@ -165,10 +165,8 @@ let forcedNum = Int(str)! //force unwrapped to '5'
 ### Reference Types
 - Classes and Closures are tipical examples.
 
-
 ### `AnyObject`
 - Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
-
 
 ### MISC 
 - There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.
