@@ -40,12 +40,6 @@
 - Fallthrough
 - Return
 
-### Data Types (Int, Float, Double)
-- On a 32-bit platform, Int is the same size as Int32.
-- On a 64-bit platform, Int is the same size as Int64.
-- Float : 32 bit floating point number. 
-- Double : Is Float64 in swift. Default and Recommended because , iOS 11 is 64 bit platform. Also swift has Float80 ! 
-
 ### Variadic Parameters
 - Variadic parameters : The parameter accepts zero or more values of a specified type.
 - Built in Eg. `print(1, 2, 3, 4, 5)`
@@ -150,6 +144,12 @@ let forcedNum = Int(str)! //force unwrapped to '5'
     }
 
     ```
+## Data Types in Swift
+- **(Int, Float, Double)**
+- On a 32-bit platform, Int is the same size as Int32.
+- On a 64-bit platform, Int is the same size as Int64.
+- Float : 32 bit floating point number. 
+- Double : Is Float64 in swift. Default and Recommended because , iOS 11 is 64 bit platform. Also swift has Float80 ! 
 
 ## Collections in Swift
 ### Mutability of Collections :
@@ -158,12 +158,10 @@ let forcedNum = Int(str)! //force unwrapped to '5'
 ### Const vs Let
 - Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
 
-### Value Types
-- enums, structures, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
-- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.
-
-### Reference Types
-- Classes and Closures are tipical examples.
+### Value Types vs Reference Types
+- enums, structs, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
+- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.*more?
+- Classes and Closures are tipical examples of Reference Types
 
 ### `AnyObject`
 - Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
