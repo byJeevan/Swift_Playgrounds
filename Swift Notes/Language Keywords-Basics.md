@@ -8,7 +8,7 @@
 ### Advantages of Swift over Objective-C
 - Swift is easier to read
 - Swift is easier to maintain
-- Swift is safer (Type-Safe) Helps you to clear about types. Eg:  If code expects a `String`, type safely avoids mistakenly passing an `Int`. Similarly prevents passing `optional` to `non-optional` check at compile time.
+- Swift is safer (Type-Safe) : Helps you to clear about types. Eg:  If code expects a `String`, type safely avoids mistakenly passing an `Int`. Similarly prevents passing `optional` to `non-optional` check at compile time.
 - Swift is unified with memory management
 - Swift requires less code
 - Swift is faster
@@ -25,8 +25,14 @@
 - *Expression patterns* allow you to compare a given value against a given expression.
 
 ## Access Controllers
-- Swift provides 5 access controllers based on Modules & Source Files **Open Access, Public, Internal, File-Private, Private**
+- Swift provides 5 access controllers based on Modules & Source Files Open Access, Public, Internal, File-Private, Private.
+- Note: A *module* is a single unit of code distribution—a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift’s import keyword.
+- Open or Public access : Enables to access source file within defined module or any other imported modules.
+- Internal access (default) : Access entities in source files within defined module.
+- File-Private access : Restricts the use of an entity- to the own defined source file.
+- Private access : Restricts the use of an entity- to the enclosing declaration. And extensions that are declared in the same file. 
 
+- **Public vs Open access**: 
 
 ### Control transfer statements in Swift
 - Continue
