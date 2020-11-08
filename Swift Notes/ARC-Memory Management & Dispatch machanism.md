@@ -10,15 +10,23 @@
 > Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM 
 
 ## ARC
+
+
+
+## Strong vs Weak vs Unowned : 
+- strong : When a property is being created, the reference is `strong` unless they are declared `weak` or `unowned`. 
+
 ### Unowned vs Weak
 - A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
-Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
-- For `weak` references, which are set to nil if the instance they reference is deallocated.
-- Weak references are automatically set to nil once the object they point to gets deallocated
+- Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
 - Since a weak reference can be set to nil, it is always declared as an optional.
-- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will 
+- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will.
 - unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
-- unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
+- When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional.
+- weak : When a property is weak, Reference count will not incremented. Hence a weak object will be present in memory until some one hold with strong reference.
+- Weak reference are always declared as optional types because the value of the variable can be set to nil. ARC automatically sets weak reference to nil when the instance is deallocated.
+Eg : `weak var owner: Person?`
+- Unowned : The big difference is that an unowned reference always have a value. ARC will not set unowned reference’s value to nil. In other words, the reference is declared as non-optional types.
 
 ## Dispatch Machanism
 ### Dynamic dispatch 
@@ -39,7 +47,6 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 - Unlike table dispatch, the message passing dictionary could be modified at runtime, enabling us to adjust the program behaviors while running a.k.a `Method swizzling`.
 - This mechanism is a keystone of Cocoa frameworks. Looking at the source of code Swift, you will see that KVO is implemented using swizzling.
 - While message dispatch seems to be less performant, it offers great flexibility enabling a bunch of cool techniques.
-
   
  ### Trivial cases
  - First of all, *functions of structs or any value types must be statically dispatched*. This makes sense because they could never be overriden.
@@ -48,7 +55,6 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
     * Functions with `dynamic` are invoked via message passing. Piror to Swift 4, a function with dynamic modifier is implicitly visible to Objective-C. Meanwhile Swift 4 requires you to explicitly declare it with `@objc` attribute.
 - Ordinary extensions (without `final`, `dynamic`, `@objc`) are directly dispatched. 
 - **Final Keyword is memory efficient :** Final key ensures that the class or method cannot be overridden. Thus it will switch Dynamic dispatch (slowest) to Static dispatch (Faster).
-
 
 ### Principles
 - Direct dispatch is prioritized.
