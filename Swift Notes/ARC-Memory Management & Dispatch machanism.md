@@ -1,3 +1,15 @@
+## ARC
+### Unowned vs Weak
+- A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
+Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
+- For `weak` references, which are set to nil if the instance they reference is deallocated.
+- Weak references are automatically set to nil once the object they point to gets deallocated
+- Since a weak reference can be set to nil, it is always declared as an optional.
+- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will 
+- unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
+- unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
+
+## Dispatch Machanism
 ### Dynamic dispatch 
 - *Dynamic dispatch* happen at runtime with the help of a virtual table.
 - Every language has its own mechanisms to support dynamic dispatch. Swift provides 2 ways to achieve dynamism: table dispatch and message dispatch.
