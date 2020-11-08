@@ -1,25 +1,15 @@
-### Similarities between classes and structures
-- Properties: These are used to store information in our classes and structures
-- Methods: These provide functionality for our classes and structures
-- Initializers: These are used when initializing instances of our classes and structures
-- Subscripts: These provide access to values using the subscript syntax
-- Extensions: These help extend both classes and structures
-
-### Differences between classes and structures
-- Type: A structure is a value type, while a class is a reference type
-- Inheritance: A structure cannot inherit from other types, while a class can
-- KVC : structs will not support. Classes inherited from NSObject will support.
-
-### Value vs Reference types
-- Structures/Enums are value types. When we pass instances of a structure within our application,
-we pass a copy of the structure and not the original structure. 
-- Classes/Closures are reference types, therefore when we pass an instance of a class, within our application, a reference to the
-original instance is passed.
-
 ## Structs
-- We cannot subclass
+Swift provides a flexible building block of making use of constructs as Structures. By making use of these structures once can define constructs methods and properties.
+
+### Defination & Introduction
+**Pros:**
 - Suitable for small data models
-- KVO not supported.
+- Encapsulate data
+- To copy the properties by 'values' rather than by 'references'
+
+**Cons:**
+- We cannot subclass
+- KVC not supported
 
 ### Struct Initialization 
 ↳ Memberwise Initialization, Custom, Designated, Convenience, Required initializers, Optional Initializers, Failable initializers, Throwing Initializers
@@ -78,6 +68,10 @@ let player = Player(name:"Jeff") //Custom initializer
 
 ## Classes
 
+### Defination & Introduction
+- Blue print of object / building blocks of you app program.
+- Usually we create instance of class called 'object'.
+
 ### Class initialization
 
 #### 1. Designated initializer
@@ -91,7 +85,32 @@ convenience initializers, but they ultimately call a designated initializer from
 ### Subclassing
 - Is a way to achieve polymorphism.
 
+### Similarities between classes and structures
+Both can
+- Define properties to store values
+- Define methods to provide functionality
+- Define subscripts to provide access to their values using subscript syntax
+- Define initializers to set up their initial state
+- Be extended to expand their functionality beyond a default implementation
+- Conform to protocols to provide standard functionality of a certain kind
 
+### Differences between classes and structures
+- Type: A structure is a value type, while a class is a reference type
+- Inheritance: A structure cannot inherit from other types, while a class can
+- KVC : structs will not support. Classes inherited from NSObject will support.
+
+### Classes have additional capabilities that structures don’t have :
+- Inheritance enables one class to inherit the characteristics of another.
+- Type casting enables you to check and interpret the type of a class instance at runtime.
+- Deinitializers enable an instance of a class to free up any resources it has assigned.
+- Reference counting allows more than one reference to a class instance.
+- KVO capability
+
+### Value vs Reference types
+- Structures/Enums are value types. When we pass instances of a structure within our application,
+we pass a copy of the structure and not the original structure. 
+- Classes/Closures are reference types, therefore when we pass an instance of a class, within our application, a reference to the
+original instance is passed.
 
 ## Closures
 
