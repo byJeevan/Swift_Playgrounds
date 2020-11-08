@@ -11,14 +11,15 @@
 - KVC : structs will not support. Classes inherited from NSObject will support.
 
 ### Value vs Reference types
-- Structures are value types. When we pass instances of a structure within our application,
-we pass a copy of the structure and not the original structure. Classes are reference types,
-therefore when we pass an instance of a class, within our application, a reference to the
+- Structures/Enums are value types. When we pass instances of a structure within our application,
+we pass a copy of the structure and not the original structure. 
+- Classes/Closures are reference types, therefore when we pass an instance of a class, within our application, a reference to the
 original instance is passed.
 
 ## Structs
 - We cannot subclass
 - Suitable for small data models
+- KVO not supported.
 
 ### Struct Initialization 
 ↳ Memberwise Initialization, Custom, Designated, Convenience, Required initializers, Optional Initializers, Failable initializers, Throwing Initializers
