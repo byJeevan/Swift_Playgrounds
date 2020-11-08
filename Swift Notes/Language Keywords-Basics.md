@@ -1,7 +1,7 @@
 ## Swift Language
 ### About
 - Swift is a general-purpose, multi-paradigm, protocol oriented, object oriented, compiled programming language ; developed by Apple Inc. for iOS, iPadOS, macOS, watchOS and Linux.
-- *An example that shows swift is safe language: * Swift is a type-safe language, and doesn’t allow (for example) a variable of type `String` and a variable of type `Double` to swap values with each other. Attempting to do so results in a compile-time error.
+- Swift is a type-safe language, and doesn’t allow (for example) a variable of type `String` and a variable of type `Double` to swap values with each other. Attempting to do so results in a compile-time error. 
 - In Swift the classes are not inherited from the base class and the classes that you define without specifying its superclass, automatically becomes the base-class. Note: In case objective : Root class either NSObject or NSCoder or NSProxy class
 - There are many different ways to pass data such as Delegate, KVO, Segue, and NSNotification, Target-Action, Callbacks.
 
@@ -24,7 +24,7 @@
 - *Enumeration case patterns* match cases of existing enumeration types.
 - *Expression patterns* allow you to compare a given value against a given expression.
 
-## Access Controllers
+## Access Controls
 - Swift provides 5 access controllers based on Modules & Source Files Open Access, Public, Internal, File-Private, Private.
 - Note: A *module* is a single unit of code distribution—a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift’s import keyword.
 - Open or Public access : Enables to access source file within defined module or any other imported modules.
@@ -57,17 +57,6 @@
     let total = sum2(1, 2, 3, 4, 5)
     ```
 
-### Unowned vs Weak
-- A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
-Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
-- For `weak` references, which are set to nil if the instance they reference is deallocated.
-- Weak references are automatically set to nil once the object they point to gets deallocated
-- Since a weak reference can be set to nil, it is always declared as an optional.
-- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will 
-- unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
-- unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
-
-
 ### Computed properties
 - Are functions *masquerading* as properties. 
 - Can change value dynamically and are thus calculated; this is in contrast to stored properties - which are fixed and have to update explicitly.
@@ -89,7 +78,8 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 - **defer** use to trigger property observer from an initializer.
 
 ## Optionals & Non-Optionals
-- By default optionals values are set to ‘nil’ when defined. Eg : var myVar:Int? //Will set to nil
+- By default optionals values are set to ‘nil’ when defined. 
+Eg : `var myVar:Int?` //Will set to nil
 
 ### Unwrapping optionals
 1. Optional binding (if-let)
@@ -117,12 +107,12 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 ### 3. Force unwrapping
 - If we are sure that a value of optional isn’t nil, swift allows to force unwrap.
 - Tipically not safe practice & hence not recomonded.
-```
-//example:
-let str = "5"
-let num = Int(str) //optional(5)
-let forcedNum = Int(str)! //force unwrapped to '5'
-```
+    ```
+    //example:
+    let str = "5"
+    let num = Int(str) //optional(5)
+    let forcedNum = Int(str)! //force unwrapped to '5'
+    ```
 
 ### 4. Optional chaining
 - Process of calling/querying properties, methods where multiple calls/queries chained together. If any link in the chain fails, then the entire chain fails by returning nil.
