@@ -1,3 +1,14 @@
+### Stack Memory
+- When a function creates a variable, the stack stores that variable and is destroyed when the function exits. 
+- Variables allocated on the stack are stored directly to the memory (LIFO order) and access to this memory is very fast.
+
+### Heap Memory
+- The heap is generally a large pool of memory from which the system can request and dynamically allocate blocks of memory. The heap doesn’t automatically destroy its object like the stack does.
+- *Reference count is tracked by the ARC* and when it becomes zero, the object is deallocated. Hence, the overall process (allocation , tracking the references and deallocation) is slower compared to stack.
+**- If the value type instance is part of a class instance, the value is stored in the heap along with the class instance.**
+
+> Stack is used for static memory allocation and Heap for dynamic memory allocation, both stored in the computer’s RAM 
+
 ## ARC
 ### Unowned vs Weak
 - A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
