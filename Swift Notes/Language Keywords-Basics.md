@@ -32,7 +32,7 @@
 - File-Private access : Restricts the use of an entity- to the own defined source file.
 - Private access : Restricts the use of an entity- to the enclosing declaration. And extensions that are declared in the same file. 
 
-- **Public vs Open access**: 
+#### Public vs Open access :
 - Both are very much similar, But the open access level was introduced to *impose limitations on class inheritance and method override* in Swift 2.0+. 
 - Open classes can be subclassed in the defined module -OR- in the imported modules in which class is defined. Even Open method can be overridden in the defined module -OR- in the imported modules in which method is defined.
 - Same applied for public class and class memebers EXCEPT only with in defined module.
