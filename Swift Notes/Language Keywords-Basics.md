@@ -27,12 +27,17 @@
 ## Access Controls
 - Swift provides 5 access controllers based on Modules & Source Files Open Access, Public, Internal, File-Private, Private.
 - Note: A *module* is a single unit of code distribution—a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift’s import keyword.
-- Open or Public access : Enables to access source file within defined module or any other imported modules.
+- Open or Public access : Enables to access source file within defined module or any other files of imported modules.
 - Internal access (default) : Access entities in source files within defined module.
 - File-Private access : Restricts the use of an entity- to the own defined source file.
 - Private access : Restricts the use of an entity- to the enclosing declaration. And extensions that are declared in the same file. 
 
 - **Public vs Open access**: 
+- Both are very much similar, But the open access level was introduced to *impose limitations on class inheritance and method override* in Swift 2.0+. 
+- Open classes can be subclassed in the defined module -OR- in the imported modules in which class is defined. Even Open method can be overridden in the defined module -OR- in the imported modules in which method is defined.
+- Same applied for public class and class memebers EXCEPT only with in defined module.
+- Eg: Core Data is fine example. Documentation says - some of methods of the `NSManagedObject` class should not be overridden. If Apple were to apply the public access level to these methods, developers would no longer be able to override these methods in their `NSManagedObject` subclasses.
+- Thus they protect the integrity of a library or framework.
 
 ### Control transfer statements in Swift
 - Continue
