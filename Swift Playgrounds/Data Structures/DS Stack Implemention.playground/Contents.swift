@@ -11,11 +11,11 @@ struct Stack {
     }
     
     mutating func pop() -> String? {
-        return self.isEmptyStack() ? nil : stackArray.removeFirst() //returns removed element
+        return self.isEmptyStack() ? nil : stackArray.removeFirst() //returns removed element from first index.
     }
     
     mutating func push(element:String) {
-        stackArray.append(element)
+        stackArray.append(element) //Append at starting index
     }
     
     func isEmptyStack() -> Bool {
