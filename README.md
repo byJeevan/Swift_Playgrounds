@@ -1,40 +1,17 @@
-# Swift Playgrounds
+## Swift Notes & Playgrounds
 
-**SWIFT 5.0** playground collection containing Swift version for fundamental challenges includes :
+* Basic and Advanced Swift Programming topics in playgrounds
 
-* Algorithms
-	- Sorting
-	- Searching
+* Algorithms **(Searching / Sorting)**
 	
-* Basics
-	- String
-	- Arrays
-	- Classes & Structures
-	- Numbers
+* Set of challenges **(String, Array, Number Manipulations / Pattern Matching / Matrix )**
 
-* Challenges
-	- String
-	- Arrays
-	- Matrix
-	- Numbers
-	- Patterns
-	- Series
+* Data Structures : **(Stack / Queue / LinkedList / Graphs & Tree)**
 
-* Data Structures
-	- Stack
-	- Queue
-	- Linked List
-	- Graphs & Trees
+* Design Patterns : **(Creational / Structural / Behavioural)**
 
-* Design Patterns
-	- Creational
-	- Structural
-	- Behavioural
-
-* Hacker Earth 30 Days Challenges in Swift
-	- Day 1 … 30
-
+* Hacker Earth 30 Days Challenges in Swift : **(Day 1 - 30)**
 
 Also Swift solutions various question posted in *[Hackerrank](https://www.hackerrank.com)/[Techgig](https://www.techgig.com/)/[GeekforGeek](http://www.geeksforgeeks.org/), [LeetCode](https://leetcode.com/)*
 
-Feel free to contribute & post feedbacks.
+Feel free to contribute & share feedbacks.
