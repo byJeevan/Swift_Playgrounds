@@ -158,6 +158,49 @@ Eg : `var myVar:Int?` //Will set to nil
 - structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.*more?
 - Classes and Closures are tipical examples of Reference Types
 
+### mutating function
+- As Structures are of value type we cannot modify the properties directly.
+- By adding `mutating` keyword to any function in value type (such as struct, enum,  etc) can enable them to modify the variable. 
+- Internally when we try to mutate the value type, **it does not mutate its value but it mutates the variable holding that value.**
+
+**Explained :**
+If we try to change any variable inside a class it’s straight forward.
+    ```
+    class Employee {
+        var name : String
+        var teamName : String
+        init(name: String, teamName: String) {
+            self.name = name
+            self.teamName = teamName
+        }
+        func changeTeam(newTeamName : String){
+            self.teamName = newTeamName
+        }
+    }
+    var emp1 = Employee(name : "Suneet", teamName:"Engineering")
+    print(emp1.teamName)    //Engineering
+    emp1.changeTeam(newTeamName : "Product")
+    print(emp1.teamName)
+    ```
+Whereas if you try to do the same in any value type, it will show us a compilation error
+*"cannot assign to property: 'self' is immutable"*
+
+    ```
+    struct Employee {
+        var name : String
+        var teamName : String
+        init(name: String, teamName: String) {
+            self.name = name
+            self.teamName = teamName
+        }
+        func changeTeam(newTeamName : String){
+            self.teamName = newTeamName //✖️ Error: cannot assign to property: 'self' is immutable
+        }
+    }
+    ```
+We can solve by adding `mutable` keyword for the method :
+```   **mutating**  func changeTeam(newTeamName : String){ ... } ```
+
 ### `AnyObject`
 - Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
 
