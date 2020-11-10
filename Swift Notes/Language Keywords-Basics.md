@@ -1,14 +1,14 @@
 ## Swift Language
 ### About
 - Swift is a general-purpose, multi-paradigm, protocol oriented, object oriented, compiled programming language ; developed by Apple Inc. for iOS, iPadOS, macOS, watchOS and Linux.
-- *An example that shows swift is safe language: * Swift is a type-safe language, and doesn’t allow (for example) a variable of type `String` and a variable of type `Double` to swap values with each other. Attempting to do so results in a compile-time error.
+- Swift is a type-safe language, and doesn’t allow (for example) a variable of type `String` and a variable of type `Double` to swap values with each other. Attempting to do so results in a compile-time error. 
 - In Swift the classes are not inherited from the base class and the classes that you define without specifying its superclass, automatically becomes the base-class. Note: In case objective : Root class either NSObject or NSCoder or NSProxy class
 - There are many different ways to pass data such as Delegate, KVO, Segue, and NSNotification, Target-Action, Callbacks.
 
 ### Advantages of Swift over Objective-C
 - Swift is easier to read
 - Swift is easier to maintain
-- Swift is safer (Type-Safe) Helps you to clear about types. Eg:  If code expects a `String`, type safely avoids mistakenly passing an `Int`. Similarly prevents passing `optional` to `non-optional` check at compile time.
+- Swift is safer (Type-Safe) : Helps you to clear about types. Eg:  If code expects a `String`, type safely avoids mistakenly passing an `Int`. Similarly prevents passing `optional` to `non-optional` check at compile time.
 - Swift is unified with memory management
 - Swift requires less code
 - Swift is faster
@@ -24,21 +24,26 @@
 - *Enumeration case patterns* match cases of existing enumeration types.
 - *Expression patterns* allow you to compare a given value against a given expression.
 
-## Access Controllers
-- Swift provides 5 access controllers based on Modules & Source Files **Open Access, Public, Internal, File-Private, Private**
+## Access Controls
+- Swift provides 5 access controllers based on Modules & Source Files Open Access, Public, Internal, File-Private, Private.
+- Note: A *module* is a single unit of code distribution—a framework or application that is built and shipped as a single unit and that can be imported by another module with Swift’s import keyword.
+- Open or Public access : Enables to access source file within defined module or any other files of imported modules.
+- Internal access (default) : Access entities in source files within defined module.
+- File-Private access : Restricts the use of an entity- to the own defined source file.
+- Private access : Restricts the use of an entity- to the enclosing declaration. And extensions that are declared in the same file. 
 
+#### Public vs Open access :
+- Both are very much similar, But the open access level was introduced to *impose limitations on class inheritance and method override* in Swift 2.0+. 
+- Open classes can be subclassed in the defined module -OR- in the imported modules in which class is defined. Even Open method can be overridden in the defined module -OR- in the imported modules in which method is defined.
+- Same applied for public class and class memebers EXCEPT only with in defined module.
+- Eg: Core Data is fine example. Documentation says - some of methods of the `NSManagedObject` class should not be overridden. If Apple were to apply the public access level to these methods, developers would no longer be able to override these methods in their `NSManagedObject` subclasses.
+- Thus they protect the integrity of a library or framework.
 
 ### Control transfer statements in Swift
 - Continue
 - Break
 - Fallthrough
 - Return
-
-### Data Types (Int, Float, Double)
-- On a 32-bit platform, Int is the same size as Int32.
-- On a 64-bit platform, Int is the same size as Int64.
-- Float : 32 bit floating point number. 
-- Double : Is Float64 in swift. Default and Recommended because , iOS 11 is 64 bit platform. Also swift has Float80 ! 
 
 ### Variadic Parameters
 - Variadic parameters : The parameter accepts zero or more values of a specified type.
@@ -57,27 +62,6 @@
     let total = sum2(1, 2, 3, 4, 5)
     ```
 
-### Value Types
-- enums, structures, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
-- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.
-
-### Reference Types
-- Classes and Closures are tipical examples.
-
-### Unowned vs Weak
-- A weak reference is always optional and automatically becomes nil when the referenced object deinitializes.
-Unowned expects an owner (pointer reference) after deallocation. It never becomes nil. Therefore the unowned variable must not be an optional. 
-- For `weak` references, which are set to nil if the instance they reference is deallocated.
-- Weak references are automatically set to nil once the object they point to gets deallocated
-- Since a weak reference can be set to nil, it is always declared as an optional.
-- `unowned` reference is always expected to have a value. which means - when the object deallocated, reference will 
-- unowned comes in two flavours - unowned(safe) and unowned(unsafe). It's equivalent to assign and unsafe_unretained from Objective-C
-- unowned - When a references object is deallocated(is nil), the unowned does not become a nil because ARC does not set it. That is why unowned reference is non-optional
-
-
-### Const vs Let
-- Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
-
 ### Computed properties
 - Are functions *masquerading* as properties. 
 - Can change value dynamically and are thus calculated; this is in contrast to stored properties - which are fixed and have to update explicitly.
@@ -92,13 +76,15 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 2. When initialization of property expensive in terms of time and memory.
 3. This will make sure properties are calculated at a later time (if at all) and only once - stored.
 
+### Stored properties
 
 ### Property Observers
 - **didSet** after property changed & **willSet** just before property changes.
 - **defer** use to trigger property observer from an initializer.
 
 ## Optionals & Non-Optionals
-- By default optionals values are set to ‘nil’ when defined. Eg : var myVar:Int? //Will set to nil
+- By default optionals values are set to ‘nil’ when defined. 
+Eg : `var myVar:Int?` //Will set to nil
 
 ### Unwrapping optionals
 1. Optional binding (if-let)
@@ -126,12 +112,12 @@ Unowned expects an owner (pointer reference) after deallocation. It never become
 ### 3. Force unwrapping
 - If we are sure that a value of optional isn’t nil, swift allows to force unwrap.
 - Tipically not safe practice & hence not recomonded.
-```
-//example:
-let str = "5"
-let num = Int(str) //optional(5)
-let forcedNum = Int(str)! //force unwrapped to '5'
-```
+    ```
+    //example:
+    let str = "5"
+    let num = Int(str) //optional(5)
+    let forcedNum = Int(str)! //force unwrapped to '5'
+    ```
 
 ### 4. Optional chaining
 - Process of calling/querying properties, methods where multiple calls/queries chained together. If any link in the chain fails, then the entire chain fails by returning nil.
@@ -153,14 +139,74 @@ let forcedNum = Int(str)! //force unwrapped to '5'
     }
 
     ```
+## Data Types in Swift
+- **(Int, Float, Double)**
+- On a 32-bit platform, Int is the same size as Int32.
+- On a 64-bit platform, Int is the same size as Int64.
+- Float : 32 bit floating point number. 
+- Double : Is Float64 in swift. Default and Recommended because , iOS 11 is 64 bit platform. Also swift has Float80 ! 
 
 ## Collections in Swift
 ### Mutability of Collections :
 - If you create a collection type(Array, Set or Dictionary) and assign it to a variable type (var), that collection type will be mutable. This means that you can change (or mutate) the collection after it’s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant (let), that collection is immutable, and its size and contents cannot be changed.
 
+### Const vs Let
+- Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
+
+### Value Types vs Reference Types
+- enums, structs, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
+- structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.*more?
+- Classes and Closures are tipical examples of Reference Types
+
+### mutating function
+- As Structures are of value type we cannot modify the properties directly.
+- By adding `mutating` keyword to any function in value type (such as struct, enum,  etc) can enable them to modify the variable. 
+- Internally when we try to mutate the value type, **it does not mutate its value but it mutates the variable holding that value.**
+
+**Explained :**
+If we try to change any variable inside a class it’s straight forward.
+    ```
+    class Employee {
+        var name : String
+        var teamName : String
+        init(name: String, teamName: String) {
+            self.name = name
+            self.teamName = teamName
+        }
+        func changeTeam(newTeamName : String){
+            self.teamName = newTeamName
+        }
+    }
+    var emp1 = Employee(name : "Suneet", teamName:"Engineering")
+    print(emp1.teamName)    //Engineering
+    emp1.changeTeam(newTeamName : "Product")
+    print(emp1.teamName)
+    ```
+Whereas if you try to do the same in any value type, it will show us a compilation error
+*"cannot assign to property: 'self' is immutable"*
+    ```
+    struct Employee {
+        var name : String
+        var teamName : String
+        init(name: String, teamName: String) {
+            self.name = name
+            self.teamName = teamName
+        }
+        func changeTeam(newTeamName : String){
+            self.teamName = newTeamName //✖️ Error: cannot assign to property: 'self' is immutable
+        }
+    }
+    ```
+    
+We can solve by adding `mutable` keyword for the method :
+    ```  
+    mutating func changeTeam(newTeamName : String){
+        self.teamName = newTeamName //✖️ Error: cannot assign to property: 'self' is immutable
+    }
+    ```
+
 ### `AnyObject`
 - Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
-- 
 
 ### MISC 
 - There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.

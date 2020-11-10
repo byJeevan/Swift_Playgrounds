@@ -1,6 +1,34 @@
+## Value Types
+- Structs, such as Int, String, Double and Bool
+- Arrays, dictionaries and sets
+- Enumerations and tuples
+
+## Reference Types
+- Functions
+- Classes
+- Closures
+
+### Value vs Reference types
+- Value type: each instance keeps a unique copy of its data. *A copy of an instance is created* when it’s assigned to a variable, constant or property.
+- Reference type: each instance shares the same copy of the data. *A reference to one instance is created* when it’s assigned to a variable, constant or property.
+
+### How `let` and `var` work differently for value types and reference types ?
+When we define a constant propery (with `let`), 
+- For reference types, the reference itself needs to remain constant. So you can change the instance, like its properties, but you can’t change the reference.
+- For value types, the value itself needs to remain constant. So you can’t change the value, or any of its properties. The value is immutable.
+
 ## Structs
-- We cannot subclass
+Swift provides a flexible building block of making use of constructs as Structures. By making use of these structures once can define constructs methods and properties.
+
+### Defination & Introduction
+**Pros:**
 - Suitable for small data models
+- Encapsulate data
+- To copy the properties by 'values' rather than by 'references'
+
+**Cons:**
+- We cannot subclass
+- KVC not supported
 
 ### Struct Initialization 
 ↳ Memberwise Initialization, Custom, Designated, Convenience, Required initializers, Optional Initializers, Failable initializers, Throwing Initializers
@@ -59,17 +87,43 @@ let player = Player(name:"Jeff") //Custom initializer
 
 ## Classes
 
+### Defination & Introduction
+- Blue print of object / building blocks of you app program.
+- Usually we create instance of class called 'object'.
+
 ### Class initialization
 
 #### 1. Designated initializer
 - A designated initializer must call a designated initializer from its immediate superclass
 
 #### 2. Convenience initializer
-- A convenience initializer must ultimately call a designated initializer
+- A convenience initializer must ultimately call a designated initializer.
+- Convenience initializers can call other
+convenience initializers, but they ultimately call a designated initializer from the same class
 
 ### Subclassing
-- Is a way to achieve polymorphism
+- Is a way to achieve polymorphism.
 
+### Similarities between classes and structures
+Both can
+- Define properties to store values
+- Define methods to provide functionality
+- Define subscripts to provide access to their values using subscript syntax
+- Define initializers to set up their initial state
+- Be extended to expand their functionality beyond a default implementation
+- Conform to protocols to provide standard functionality of a certain kind
+
+### Differences between classes and structures
+- Type: A structure is a value type, while a class is a reference type
+- Inheritance: A structure cannot inherit from other types, while a class can
+- KVC : structs will not support. Classes inherited from NSObject will support.
+
+### Classes have additional capabilities that structures don’t have :
+- Inheritance enables one class to inherit the characteristics of another.
+- Type casting enables you to check and interpret the type of a class instance at runtime.
+- Deinitializers enable an instance of a class to free up any resources it has assigned.
+- Reference counting allows more than one reference to a class instance.
+- KVO capability
 
 ## Closures
 
