@@ -184,7 +184,6 @@ If we try to change any variable inside a class it’s straight forward.
     ```
 Whereas if you try to do the same in any value type, it will show us a compilation error
 *"cannot assign to property: 'self' is immutable"*
-
     ```
     struct Employee {
         var name : String
@@ -198,8 +197,13 @@ Whereas if you try to do the same in any value type, it will show us a compilati
         }
     }
     ```
+    
 We can solve by adding `mutable` keyword for the method :
-```   **mutating**  func changeTeam(newTeamName : String){ ... } ```
+    ```  
+    mutating func changeTeam(newTeamName : String){
+        self.teamName = newTeamName //✖️ Error: cannot assign to property: 'self' is immutable
+    }
+    ```
 
 ### `AnyObject`
 - Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
