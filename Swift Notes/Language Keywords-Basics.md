@@ -61,7 +61,52 @@
     //can be called
     let total = sum2(1, 2, 3, 4, 5)
     ```
+### `inout` parameters
+- `inout` can modify the variable passed as an argument to a function.
+- We know that all the variables passed to a function are of an immutable type (say `let` objects by default) which cannot be changed.
+- If it’s a class object, you cannot create a new object *but you can manipulate the properties of that class object or you can call any function with that object.*
+Consider eg. where properties can be modified but object `emp` it self can't.
+```
+    class Employee {
+        var name : String
+        var age : Int
+        init(name: String, age: Int){
+            self.name = name
+            self.age = age
+        }
+    }
+    
+    func changeEmployeeData(emp : Employee){  
+        emp.name = "Suneet" //Allowed
+        emp.age = 25 //Allowed
+        emp = Employee(name: “Suneet”, age: 25) //Not Allowed : Error ✖️  “cannot assign to value: ‘emp’ is a ‘let’ constant”
+    }
+    
+    let employee = Employee(name: "Random", age : 10)
+    print(employee.name)   //Random
+    print(employee.age)    //10
+    changeEmployeeData(emp : employee)
+    print(employee.name)    //Suneet
+    print(employee.age)     //25
+```
 
+- Instead, we can use the inout after which we can modify the object.
+
+```
+    func changeEmployeeData(emp :inout Employee) { //**1
+        emp = Employee(name: “Suneet”, age: 25)
+    }
+
+    var employee = Employee(name: “Random”, age : 10)
+    print(employee.name)   //Random
+    print(employee.age)    //10
+    changeEmployeeData(emp : &employee) //**2
+    print(employee.name)   //Suneet
+    print(employee.age)    //25
+```
+**The only thing to keep in mind while using the `inout` is, as we pass the address of the variable/object, it modifies the actual object also.**
+
+## Properties in Swift
 ### Computed properties
 - Are functions *masquerading* as properties. 
 - Can change value dynamically and are thus calculated; this is in contrast to stored properties - which are fixed and have to update explicitly.
