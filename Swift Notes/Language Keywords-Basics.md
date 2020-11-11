@@ -77,6 +77,16 @@
 3. This will make sure properties are calculated at a later time (if at all) and only once - stored.
 
 ### Stored properties
+- A stored property is a constant or variable that is stored as part of an instance of a particular class or structure.
+- We can provide a default value for a stored property as part of its definition -OR- can also set and modify the initial value for a stored property during initialization.
+
+Eg:
+    ```
+    struct FixedLengthRange {
+        var firstValue: Int
+        let length: Int
+    }
+    ```
 
 ### Property Observers
 - **didSet** after property changed & **willSet** just before property changes.
