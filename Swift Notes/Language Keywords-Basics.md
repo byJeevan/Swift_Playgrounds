@@ -84,8 +84,9 @@ Eg:
     ```
     struct FixedLengthRange {
         var firstValue: Int
-        let length: Int
+        let length: Int 
     }
+    
     ```
 
 ### Property Observers
