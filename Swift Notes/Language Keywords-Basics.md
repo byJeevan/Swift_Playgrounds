@@ -82,9 +82,9 @@
 
 Eg:
 ```
-struct FixedLengthRange {
-    var firstValue: Int
-    let length: Int
+struct Num {
+   var digits: Int
+   let pi = 3.1415
 }
 ```
 
