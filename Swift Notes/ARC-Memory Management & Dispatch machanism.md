@@ -1,3 +1,11 @@
+### Dangling Pointer
+- A pointer whose object has been destroyed.
+- Solution : After de-allocating memory, initialise pointer to NULL so that pointer will be no longer dangling.
+
+### Memory Leak
+- An object without pointer is useless, it is occupying memory. But not other object can event get a reference to it. 
+- An object fails to go out of existence when no other objects exists that have a pointer to it. Possibly crashing with`EXC_BAD_ACCESS` error.
+
 ### Stack Memory
 - When a function creates a variable, the stack stores that variable and is destroyed when the function exits. 
 - Variables allocated on the stack are stored directly to the memory (LIFO order) and access to this memory is very fast.
