@@ -23,3 +23,9 @@
 * Comparable conformance for enums.
 * `self` is no longer required in many places like Closures.
 * A new Float16 type.
+
+### iOS 14
+* App Clips
+* Widgets & `WidgetKit`
+* SwiftUI - new built-in views, including a progress indicator and a text editor, Grids layouts.
+* App Store Privacy Information
