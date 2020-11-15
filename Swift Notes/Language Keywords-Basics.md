@@ -261,15 +261,8 @@ We can solve by adding `mutable` keyword for the method :
     ```
 
 ### `AnyObject`
-- Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol
+- Swift defines the `AnyObject` type alias to represent instances of any reference type, and it’s internally defined as a protocol.
 
 ### `defer`
 - Provides a block of code that executes when the excecution leaving the current scope.
-
-### MISC 
-- There are three ways to create a predicate in Cocoa: using a format string, directly in code, and from a predicate template.
-- ARC - Automatic Reference Counting is a mechanism which manages a memory, which is applicable for reference type. An object is deallocated only when there are 0 references on it.
-- By default optionals values are set to ‘nil’ when defined. 
-  Eg : `var myVar:Int? //is nil.`
-- `final` key will stop overriding method -or- subclassing class
 
