@@ -29,3 +29,7 @@
 * Widgets & `WidgetKit`
 * SwiftUI - new built-in views, including a progress indicator and a text editor, Grids layouts.
 * App Store Privacy Information
+
+### Swift 5.4
+* Focused on Quality & Performance improvements
+* 
