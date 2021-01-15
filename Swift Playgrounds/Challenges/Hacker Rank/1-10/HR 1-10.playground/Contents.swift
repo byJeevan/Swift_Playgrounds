@@ -94,3 +94,23 @@ func sockMerchant(n: Int, ar: [Int]) -> Int {
 }
 
 sockMerchant(n: 9, ar: [10, 20, 20, 10, 10, 30, 50, 10, 20]) //3
+
+
+/// 5. Alternating Characters
+/// You are given a string containing characters `A` and `B` only. Your task is to change it into a string such that there are no matching adjacent characters. To do this, you are allowed to delete zero or more characters in the string.
+/// Your task is to find the minimum number of required deletions.
+/// Example: `s = AABAAB`
+/// Remove an `A` at positions `0` and `3` to make `s = ABAB` in `2` deletions.
+func alternatingCharacters(s: String) -> Int {
+    var delCount = 0
+    var lastChar:Character?
+    
+    s.forEach {
+        if $0 == lastChar { delCount = delCount + 1 }
+        lastChar = $0
+    }
+    
+    return delCount
+}
+
+alternatingCharacters(s: "ABABABAB")
