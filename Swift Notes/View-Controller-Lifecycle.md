@@ -82,5 +82,6 @@ When we create a new application in Xcode, the IDE automatically sets up the cod
 
 >In Swift projects this is done via the  `@UIApplicationMain` . In Objective-C projects the set up is explicitly done in the  `main.m`  file.
 
-#### UIResponder
-#### UIView vs Layer
+#### UIView vs CALayer
+**1. Usage of library  :** UIView is a container for CALayers - Using UIKit. CALayer where we draw the contents - using CoreGraphics.
+**2. Way of drawing :**  Views are being drawn using CPU on the main thread. Layers are drawn directly on the GPU. It happens on a separate thread without burdening the CPU.
