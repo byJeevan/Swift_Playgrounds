@@ -1,5 +1,7 @@
 /************************
- Selection Sort
+ Selection Sort:
+ Sort the given list by repeatedly finding the 'minimum' element (i.e for Asc order) from unsorted part of list 
+ and putting it at the beginning. The algo maintains 2 subarrays.
  ************************/
 
 import Foundation
