@@ -74,3 +74,13 @@ Before a view controller is removed from memory, it gets deinitialized.
 
 5. **Suspended state**: The app is in the background but is not executing code. The system moves apps to this state automatically and does not notify them before doing so. While suspended, an app remains in memory but does not execute any code. When a low memory condition occurs, the system may purge suspended apps without notice to make more space for the foreground app.
 
+#### `@UIApplicationMain` attribute
+Apply this attribute to a class to indicate that it is the application delegate. Using this attribute is equivalent to calling the `UIApplicationMain` function and passing this class’s name as the name of the delegate class.
+Cocoa Touch uses the `@UIApplicationMain` attribute on an implementation of `UIApplicationDelegate` instead of a `main.swift` file to mark the entry point.
+
+When we create a new application in Xcode, the IDE automatically sets up the code (also info.plist) to instantiate a `UIApplication` when the project is run. It also generates a class that implements `UIApplicationDelegate` called `AppDelegate` and sets the application's [delegate property](https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIApplication_Class/#//apple_ref/occ/instp/UIApplication/delegate) to an instance of this class.
+
+>In Swift projects this is done via the  `@UIApplicationMain` . In Objective-C projects the set up is explicitly done in the  `main.m`  file.
+
+#### UIResponder
+#### UIView vs Layer
