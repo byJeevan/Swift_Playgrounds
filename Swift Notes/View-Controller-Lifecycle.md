@@ -46,17 +46,31 @@ Before a view controller is removed from memory, it gets deinitialized.
 
 > **NOTE :** In iOS 6 and later, viewDidUnload method is deprecated since views are no longer  purged under low-memory conditions.
 
-### App Life cycle
-● **Not running State**: The app has not been launched -or- was running but was terminated by the system.
+### App Launch-Life cycle
 
-● **Inactive state: (Foreground)** The app is running in the foreground but is currently not receiving events. ( It may be executing other code though.) An app usually stays in this state only briefly as it transitions to a different state. The only time it stays inactive for any period of time is when the user locks the screen or the system prompts the user to respond to some event, such as an incoming phone call or SMS message.
+1. Main Function : App entry point “main” function, Creates application level Autorelease pool. Hands control off to UIKit framework by calling `UIApplicationMain`.
 
-● **Active state (Foreground)**: The app is running in the foreground and is receiving events. This is the normal mode for foreground apps.
+2. UIApplicationMain : Invokes UIApplication, loads storyboard, reads info.plist for application setups. Sets `UIApplicationDelegate`, that will create UIWindow object and RootViewController.
 
-● **Background state**: The app is in the background and executing code. Most apps enter this state briefly on their way to being suspended. However, an app that requests extra execution time may remain in this state for a period of time. In addition, an app being launched directly into the background enters this state instead of the inactive state.
+3. Main event loop : At launch time that later processes user event such as gestures, sensor readings, redraw.
 
-● **Suspended state**: The app is in the background but is not executing code. The system moves apps to this state automatically and does not notify them before doing so. While suspended, an app remains in memory but does not execute any code. When a low memory condition occurs, the system may purge suspended apps without notice to make more space for the foreground app.
+4. Background Message : The executes code at background but not received any events. However, mostly it will be on the way of suspended state.
+
+5. Termination of app : System initiates app termination when it misbehaves, not responding events, or due to out of memory.
 
 > **NOTE :**
 > In iOS 13 and later, use `UISceneDelegate` objects to respond to life-cycle events in a scene-based app.
 > In iOS 12 and earlier, use the `UIApplicationDelegate` object to respond to life-cycle events.
+
+### App States
+
+1. **Not running State**: The app has not been launched -or- was running but was terminated by the system.
+
+2. **Inactive state: (Foreground)** The app is running in the foreground but is currently not receiving events. ( It may be executing other code though.) An app usually stays in this state only briefly as it transitions to a different state. The only time it stays inactive for any period of time is when the user locks the screen or the system prompts the user to respond to some event, such as an incoming phone call or SMS message.
+
+3. **Active state (Foreground)**: The app is running in the foreground and is receiving events. This is the normal mode for foreground apps.
+
+4. **Background state**: The app is in the background and executing code. Most apps enter this state briefly on their way to being suspended. However, an app that requests extra execution time may remain in this state for a period of time. In addition, an app being launched directly into the background enters this state instead of the inactive state.
+
+5. **Suspended state**: The app is in the background but is not executing code. The system moves apps to this state automatically and does not notify them before doing so. While suspended, an app remains in memory but does not execute any code. When a low memory condition occurs, the system may purge suspended apps without notice to make more space for the foreground app.
+
