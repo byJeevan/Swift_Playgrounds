@@ -82,6 +82,15 @@ When we create a new application in Xcode, the IDE automatically sets up the cod
 
 >In Swift projects this is done via the  `@UIApplicationMain` . In Objective-C projects the set up is explicitly done in the  `main.m`  file.
 
+### App Delegate Lifecycle
+- application:willFinishLaunchingWithOptions: — This method is your app’s first chance to execute code at launch time.
+- application:didFinishLaunchingWithOptions: — This method allows you to perform any final initialization before your app is displayed to the user.
+- applicationDidBecomeActive: — Lets your app know that it is about to become the foreground app. Use this method for any last minute preparation.
+- applicationWillResignActive: — Lets you know that your app is transitioning away from being the foreground app. Use this method to put your app into a quiescent state.
+- applicationDidEnterBackground: — Lets you know that your app is now running in the background and may be suspended at any time.
+- applicationWillEnterForeground: — Lets you know that your app is moving out of the background and back into the foreground, but that it is not yet active.
+- applicationWillTerminate: — Lets you know that your app is being terminated. This method is not called if your app is suspended.
+
 #### UIView vs CALayer
 **1. Usage of library  :** UIView is a container for CALayers - Using UIKit. CALayer where we draw the contents - using CoreGraphics.
 **2. Way of drawing :**  Views are being drawn using CPU on the main thread. Layers are drawn directly on the GPU. It happens on a separate thread without burdening the CPU.
