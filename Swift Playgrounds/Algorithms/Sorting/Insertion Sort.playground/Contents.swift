@@ -36,6 +36,18 @@ for i in 0..<n {
  
 }
 
+/*
+    //Alternative way:
+    for index in 1..<arr.count {		 
+        var currentIndex = index
+        while currentIndex > 0 && arr[currentIndex] < arr[currentIndex - 1] {  
+            arr.swapAt(currentIndex - 1, currentIndex)
+            currentIndex -= 1
+        }
+    }
+ 
+*/
+
 //Sorted Array - Ascending order.
 print(arr)
 
