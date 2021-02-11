@@ -11,7 +11,7 @@ struct Stack {
     }
     
     mutating func pop() -> String? {
-        return self.isEmptyStack() ? nil : stackArray.removeFirst() //returns removed element from first index.
+        return self.isEmptyStack() ? nil : stackArray.remove(at:0) //remove and return first element along with updated array.
     }
     
     mutating func push(element:String) {
