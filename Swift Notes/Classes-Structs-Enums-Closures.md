@@ -198,6 +198,34 @@ Both can
 - Polymorphism would require a function table. A function table would be stored as a static member of the struct type. But to access this static member, every struct instance would need an instance member which encodes the type of the instance. This is usually called the "isa" pointer (as in, this instance is a A type). This would be 8 bytes of overhead (on 64 bit systems) for every instance. Considering Int, Bool, Double, and many other common types are all implemented as structs, this would be an unacceptable amount of overhead. Just think, a Bool is a one byte value, which would need 8 bytes of overhead. That's 11% efficiency!
 - That’s why swift provides Protocols to solve all the above problems.
 
+## Enumerations 
+An enumeration **defines a common type** for a group of related values and enables you to work with those values in a type-safe way within your code
+
+### Why do we need Enums ? (Tj.Veens - Swift in Depth)
+- Enums are sometimes an alternative to subclassing, allowing for a flexible architecture.
+- Enums give you the ability to catch problems at compile time instead of runtime.
+- You can use enums to group properties together.
+- Enums are sometimes called sum types, based on algebraic data types.
+- Structs can be distributed over enums.
+- When working with enum’s raw values, you forego catching problems at compile time.
+- Handling strings can be made safer by converting them to enums.
+- When converting a string to an enum, grouping cases and using a lowercased string makes conversion easier.
+
+### Enum cases default value ?
+**Each enumeration definition defines a new type.** Hence, Swift enumeration cases don’t have an integer value set (implicit) by default, unlike languages like C and Objective-C.
+
+Example:
+```
+enum CompassPoint {
+    case north
+    case south
+    case east
+    case west
+}
+```
+Here `north`, `south`, `east` and `west` don’t implicitly equal 0, 1, 2 and 3. 
+
+
 
 ### References:
 - [Medium #post1](https://medium.com/swift-india/functional-swift-closures-67459b812d0)
