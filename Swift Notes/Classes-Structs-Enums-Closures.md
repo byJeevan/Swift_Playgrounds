@@ -225,6 +225,62 @@ enum CompassPoint {
 ```
 Here `north`, `south`, `east` and `west` don’t implicitly equal 0, 1, 2 and 3. 
 
+### What are associated values in Enums ?
+Used to **store values** of other types with **enum case values.**
+
+Example:
+```
+enum Barcode {
+   case upc(Int, Int, Int, Int)
+   case qrCode(String)
+}
+```
+
+### What is Rawvalue in Enums ?
+Enum cases can be prepopulated with default values called ‘rawValue’.
+
+Example 1:
+```
+enum Planets:Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune 
+} // “mercury” explicitly assigned raw (Int) value as ‘1’. For `venus` implicitly assigned “2” and so on.
+```
+Example 2:
+```
+enum Planets:String {
+    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune 
+
+} //Implicitly assigned raw String value “mercury” to `mercury` case and so on.
+```
+
+> NOTE: For any enumeration with a string, integer, or floating-point raw type, the Swift compiler automatically adds RawRepresentable conformance.
+
+### What are Recursive Enums ?
+A recursive enumeration is an enumeration that has another instance of the enumeration as the associated value for one or more of the enumeration cases
+
+Example:
+```
+enum ArithmeticExpression {
+    case number(Int)
+    indirect case addition(ArithmeticExpression, ArithmeticExpression)
+    indirect case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+
+//-or- enable indirection for all of the enumeration’s cases :
+
+indirect enum ArithmeticExpression {
+    case number(Int)
+    case addition(ArithmeticExpression, ArithmeticExpression)
+    case multiplication(ArithmeticExpression, ArithmeticExpression)
+}
+
+```
+
+### How do we access Swift Enums in Objective-C ?
+Using the @objc attribute. But those enums must declare an integer raw type, and cannot be generic or use associated values.
+> Note: Because Objective-C enums are not namespaced, enum cases are imported into Objective-C as the concatenation of the enum name and case name.
+Working Example: https://oscarcortes.medium.com/using-swift-string-enums-in-objective-c-f6683da5b92e
+
 
 
 ### References:
