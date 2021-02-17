@@ -92,5 +92,9 @@ When we create a new application in Xcode, the IDE automatically sets up the cod
 - applicationWillTerminate: — Lets you know that your app is being terminated. This method is not called if your app is suspended.
 
 #### UIView vs CALayer
-**1. Usage of library  :** UIView is a container for CALayers - Using UIKit. CALayer where we draw the contents - using CoreGraphics.
+**1. Usage of library  :** UIView is a container for CALayers - uses UIKit. CALayer where we draw the contents - uses CoreGraphics.
 **2. Way of drawing :**  Views are being drawn using CPU on the main thread. Layers are drawn directly on the GPU. It happens on a separate thread without burdening the CPU.
+
+#### LayoutIfNeeded vs SetNeedsLayout
+`layoutIfNeeded` says update immediately please, whereas `setNeedsLayout` says please update but you can wait until the next update cycle.
+
