@@ -3,7 +3,7 @@ Placeholder for types that allows flexible code that can be applied across multi
 
 #### The advantage of using generics over `Any` type that
 - They still allow the compiler to enforce strong type-safety. 
-- With generics, you would not work with Any,  saving you from downcasting at runtime.  
+- With generics, you would not work with `Any`,  saving you from downcasting at runtime.  
 		
 ### Generic Method/Function
 ```
@@ -14,6 +14,7 @@ func printMe<T>(a: T) {
 printMe(a: 1) //prints 1
 printMe(a: "iPhone") //prints ‘iPhone’
 ``` 
+
 ### Generic Type (can be Class, Struct, Enum) :
 ```
 //Example Generic version of stack (LIFO) implementation
