@@ -1,5 +1,8 @@
 
 ## Higher Order Functions
+- Higher order functions are based on closures. 
+- Shorthand arguments such as $0, $1 also can be used to simplify.
+
 ### map
 It performs an operation on all the elements of a collection and returns a new collection with the results of the operation on the original elements.
 Example: 
