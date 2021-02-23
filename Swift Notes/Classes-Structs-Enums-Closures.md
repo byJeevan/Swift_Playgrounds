@@ -1,6 +1,6 @@
 ## Value Types
 - Structs, such as Int, String, Double and Bool
-- Arrays, dictionaries and sets
+- Arrays, dictionaries and sets ([Collections](https://github.com/byJeevan/Swift_Playgrounds/blob/master/Swift%20Notes/Collections.md))
 - Enumerations and tuples
 
 ## Reference Types
