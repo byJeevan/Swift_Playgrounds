@@ -288,8 +288,8 @@ enum OptionalValue<T> {
     case Some(T)
 }
 ```
-`let x: String? = nil` //actually means: `let x = Optional<String>.None`
-`let x :String? = "hello"` //actually means: `let x = Optional<String>.Some("hello")`
+- `let x: String? = nil` //actually means: `let x = Optional<String>.None`
+- `let x :String? = "hello"` //actually means: `let x = Optional<String>.Some("hello")`
 
 
 ### References:
