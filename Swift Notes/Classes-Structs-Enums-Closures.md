@@ -281,6 +281,15 @@ Using the @objc attribute. But those enums must declare an integer raw type, and
 > Note: Because Objective-C enums are not namespaced, enum cases are imported into Objective-C as the concatenation of the enum name and case name.
 Working Example: https://oscarcortes.medium.com/using-swift-string-enums-in-objective-c-f6683da5b92e
 
+### How `optional` implemented as enum ?
+```
+enum OptionalValue<T> {
+    case None
+    case Some(T)
+}
+```
+`let x: String? = nil` //actually means: `let x = Optional<String>.None`
+`let x :String? = "hello"` //actually means: `let x = Optional<String>.Some("hello")`
 
 
 ### References:
