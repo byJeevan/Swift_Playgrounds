@@ -1,3 +1,7 @@
+## Collections
+### Mutability of Collections :
+- If you create a collection type(Array, Set or Dictionary) and assign it to a variable type (var), that collection type will be mutable. This means that you can change (or mutate) the collection after it’s created by adding, removing, or changing items in the collection. If you assign an array, a set, or a dictionary to a constant (let), that collection is immutable, and its size and contents cannot be changed.
+- Collections are [generic implementations](https://github.com/byJeevan/Swift_Playgrounds/blob/master/Swift%20Notes/Generics.md) under the hood. Swift collections (Array, Set and Dictionary) types are implemented as generic functions.
 
 ## Higher Order Functions
 - Higher order functions are based on closures. 
