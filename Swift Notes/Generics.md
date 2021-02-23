@@ -141,5 +141,7 @@ protocol Container {
 Example : `associatedtype Item: Equatable`
 
  
+### What's the difference in writing `<T: Equatable>` and `<T> ... where T: Equatable`.
+- *Both are same*.
 
 
