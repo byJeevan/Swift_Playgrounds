@@ -98,3 +98,6 @@ When we create a new application in Xcode, the IDE automatically sets up the cod
 #### LayoutIfNeeded vs SetNeedsLayout
 `layoutIfNeeded` says update immediately please, whereas `setNeedsLayout` says please update but you can wait until the next update cycle.
 
+#### How to improve the performance when shadow ? [Ref](https://developer.apple.com/documentation/quartzcore/calayer/1410771-shadowpath)
+- Specifying an explicit path (`shadowPath`) usually improves rendering performance. 
+- Example : Collection view cell with card like UI will hit performance/smooth scrolling issue. Hence `layoutSubviews()` make use of  `layer.shadowPath to set UIBezierPath(..)`
