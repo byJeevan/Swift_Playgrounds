@@ -204,6 +204,16 @@ Eg : `var myVar:Int?` //Will set to nil
 ### Const vs Let
 - Difference b/w const and let is `const` evaluated at compile time and `let` evaluated at run time.
 
+### Static variables
+- Creates properties or methods that belogs to a type rather than instance of the type.
+- Created at the time of class/struct loading.
+
+### class vs static 
+- class is used inside Reference Type(class, function):
+  * computed property / method / can be overridden by subclass.
+- static is used inside Reference Type(class, function) and Value Type(struct, enum, tuple):
+* computed property and stored property / method / cannot be changed by subclass.
+
 ### Value Types vs Reference Types
 - enums, structs, Swift Collections (Array/Set/Dictionary) and Basic value types (String, Integer)
 - structs, enums and tuples are true value types only if all their properties are value types. If any of their properties is a reference type, we still could run into the implicit data sharing issues.*more?
