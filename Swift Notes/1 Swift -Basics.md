@@ -272,3 +272,6 @@ We can solve by adding `mutable` keyword for the method :
 ### `defer`
 - Provides a block of code that executes when the excecution leaving the current scope.
 
+### `@discardableResult`
+- Very useful to hide warnings of unused return values -or- avoid using `_` to silence the warnings.
+- Let you to have both to ignore the return value while in other cases you want to know the return value. 
