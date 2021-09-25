@@ -29,11 +29,11 @@ func makePatternOf(_ size: Int) {
     for index in (0..<size) {
         
         let stop = size-index-1;
-        for kindex in 0..<stop  {
+        for _ in 0..<stop  {
             str.append(" ");
         }
         
-        for kindex in 0...index  {
+        for _ in 0...index  {
             str.append("#");
         }
         print(str)
