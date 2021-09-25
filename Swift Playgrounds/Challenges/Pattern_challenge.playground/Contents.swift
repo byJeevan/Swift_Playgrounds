@@ -3,7 +3,7 @@
  Problem Statement:
  
  Write a program that prints a staircase of size n.
-  Observe that its base and height are both equal to n, and the image is drawn using # symbols and spaces. The last line is not preceded by any spaces.
+  Observe that its base and height are both equal to n, and the image is drawn using `#` symbols and spaces. The last line is not preceded by any spaces.
 
  Note: The last line must have spaces in it.
  
@@ -22,33 +22,23 @@
  
  */
 
-import Foundation
 
-let n = 6
+func makePatternOf(_ size: Int) {
 
-var str = ""
-
-for index in (0..<n) {
-    
-    let stop = n-index-1;
-    
-    for kindex in 0..<stop  {
+    var str = ""
+    for index in (0..<size) {
         
-        str.append(" ");
+        let stop = size-index-1;
+        for kindex in 0..<stop  {
+            str.append(" ");
+        }
         
+        for kindex in 0...index  {
+            str.append("#");
+        }
+        print(str)
+        str = ""
     }
-    
-    
-    for kindex in 0...index  {
-        
-        str.append("#");
-        
-        
-    }
-    
-    
-    print(str)
-    
-    str = ""
-    
 }
+
+makePatternOf(6)
