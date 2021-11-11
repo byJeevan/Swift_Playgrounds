@@ -244,3 +244,6 @@ Example : `associatedtype Item: Equatable`
 **Cons:** 
 - Extensions can add new functionality to a type, but they cannot override existing functionality
 - Extensions can add new computed properties, but they cannot add stored properties, or add property observers to existing properties
+	
+### Why `isEmpty` prefferred over `count == 0` ?
+Time Complexity of length calculation depends on collection types. For `String` type, `count == 0` will loop through all over UTF-8 contents (which is O(n)). Rather `isEmpty` will check `startIndex == endIndex`.
