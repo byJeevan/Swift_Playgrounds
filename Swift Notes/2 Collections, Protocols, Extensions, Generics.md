@@ -250,6 +250,7 @@ Time Complexity of length calculation depends on collection types.
 For `String` type, `count == 0` will loop through all over UTF-8 contents (which is O(n)). Rather `isEmpty` will check `startIndex == endIndex`.
 For `Set` type, both expressions are same complex 0(1)
 Standard implementation of isEmpty is :
+	
 	```
 	extension Collection {
     		var isEmpty: Bool { startIndex == endIndex } // not as we imagined count == 0
