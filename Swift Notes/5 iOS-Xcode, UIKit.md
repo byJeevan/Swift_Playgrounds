@@ -143,3 +143,11 @@ When we create a new application in Xcode, the IDE automatically sets up the cod
 #### How to improve the performance when shadow ? [Ref](https://developer.apple.com/documentation/quartzcore/calayer/1410771-shadowpath)
 - Specifying an explicit path (`shadowPath`) usually improves rendering performance. Which is nil by default.
 - Example : Collection view cell with card like UI will hit performance/smooth scrolling issue. Hence `layoutSubviews()` make use of  `layer.shadowPath to set UIBezierPath(..)`
+
+#### .fullScreen vs .overFullscreen as in `modalPresentationStyle` 
+`.fullScreen`: the views belonging to the presenting view controller are removed after the presentation completes.
+
+`.overFullScreen`: the view beneath the presented are not removed from the view hierarchy when the presentation finishes. So if the presented view controller does not fill the screen with opaque content, the underlying content shows through.
+
+
+
