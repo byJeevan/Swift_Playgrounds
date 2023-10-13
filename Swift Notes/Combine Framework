@@ -1,0 +1,12 @@
+**What is Combine ?**
+- Provides a declarative Swift API.
+
+*Publisher:* 
+Publisher is a protocol which has two associated types(Output, Failure)
+Publisher has one key function which is called subscribe.
+Combine provides a number of additional convenience publishers:
+- Just, Future, Deferred, Empty, Sequence, Fail, Record, Share, Multicast, ObservableObject, @Published.
+Note: There are some Apple API outside of Combine provide publishers as well 
+
+Operators:
+Subjects:
